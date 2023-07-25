@@ -14,7 +14,7 @@ class ScollerCaht extends StatelessWidget {
     return MaterialApp(
       routes: {
         'LoginPage': (context) => LoginPage(),
-        'RegisterPage': (context) => RegisterPage(),
+        RegisterPage.id: (context) => RegisterPage(),
       },
       initialRoute: 'LoginPage',
     );

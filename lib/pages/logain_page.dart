@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mahadta_firbase/constants.dart';
 import 'package:mahadta_firbase/pages/register_page.dart';
 import 'package:mahadta_firbase/widget/custom_text_field.dart';
 
 import '../widget/custom_button.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+  String id = 'registerPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff2B475E),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
@@ -68,7 +70,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, 'RegisterPage');
+                    Navigator.pushNamed(context, RegisterPage.id);
                   },
                   child: const Text(
                     'Register',

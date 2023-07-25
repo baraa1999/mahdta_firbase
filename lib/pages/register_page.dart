@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mahadta_firbase/constants.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  RegisterPage({super.key});
+  static String id = 'registerPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff2B475E),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
