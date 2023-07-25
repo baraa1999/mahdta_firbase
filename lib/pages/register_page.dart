@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mahadta_firbase/pages/register_page.dart';
-import 'package:mahadta_firbase/widget/custom_text_field.dart';
 
 import '../widget/custom_button.dart';
+import '../widget/custom_text_field.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class LoginPage extends StatelessWidget {
             const Row(
               children: [
                 Text(
-                  'LOGIN',
+                  'REGISTER',
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.white,
@@ -54,31 +53,21 @@ class LoginPage extends StatelessWidget {
               height: 20,
             ),
             CustomButton(
-              text: 'Login',
+              text: 'Register',
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'don\'t have an account ? ',
+                Text(
+                  'already have an account ? ',
                   style: TextStyle(color: Colors.white),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const RegisterPage();
-                      }),
-                    );
-                  },
-                  child: const Text(
-                    'Register',
-                    style: TextStyle(color: Color(0xffC7EDE6)),
-                  ),
+                Text(
+                  'Login',
+                  style: TextStyle(color: Color(0xffC7EDE6)),
                 )
               ],
             ),
@@ -87,5 +76,6 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+    ();
   }
 }
