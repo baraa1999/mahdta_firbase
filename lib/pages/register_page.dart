@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -58,16 +57,21 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'already have an account ? ',
                   style: TextStyle(color: Colors.white),
                 ),
-                Text(
-                  'Login',
-                  style: TextStyle(color: Color(0xffC7EDE6)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Login',
+                    style: TextStyle(color: Color(0xffC7EDE6)),
+                  ),
                 )
               ],
             ),
@@ -76,6 +80,5 @@ class RegisterPage extends StatelessWidget {
         ),
       ),
     );
-    ();
   }
 }
