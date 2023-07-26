@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mahadta_firbase/constants.dart';
 import '../widget/custom_button.dart';
@@ -6,6 +7,8 @@ import '../widget/custom_text_field.dart';
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
   static String id = 'registerPage';
+  String? email;
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +45,30 @@ class RegisterPage extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
+              onChanged: (data) {
+                email = data;
+              },
               hintText: 'Email',
             ),
             const SizedBox(
               height: 10,
             ),
             CustomTextField(
+              onChanged: (data) {
+                password = data;
+              },
               hintText: 'Password',
             ),
             const SizedBox(
               height: 20,
             ),
             CustomButton(
+              onTap: () async {
+                var auth = FirebaseAuth.instance;
+                UserCredential user = await auth.createUserWithEmailAndPassword(
+                    email: email!, password: password!);
+                print(user.user!.displayName);
+              },
               text: 'Register',
             ),
             const SizedBox(
@@ -62,7 +77,7 @@ class RegisterPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'already have an account ? ',
                   style: TextStyle(color: Colors.white),
                 ),
