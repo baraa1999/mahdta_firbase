@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mahadta_firbase/pages/chat_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../constants.dart';
 import '../helper/show_snack_bar.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
+import 'chat_page.dart';
 
 class RegisterPage extends StatefulWidget {
-  RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({Key? key}) : super(key: key);
 
   static String id = 'RegisterPage';
 
@@ -100,7 +100,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       setState(() {});
                       try {
                         await registerUser();
-                        Navigator.pushNamed(context, ChatPage.id);
+
+                        Navigator.pushNamed(context, 'ChatPage');
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'weak-password') {
                           showSnackBar(context, 'weak password');
@@ -117,13 +118,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                   text: 'REGISTER',
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'already have an account?',
                       style: TextStyle(
                         color: Colors.white,
@@ -133,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: const Text(
+                      child: Text(
                         '  Login',
                         style: TextStyle(
                           color: Color(0xffC7EDE6),
