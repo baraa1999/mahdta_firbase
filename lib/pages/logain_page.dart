@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mahadta_firbase/pages/chat_page.dart';
 import 'package:mahadta_firbase/pages/register_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../constants.dart';
@@ -96,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await loginUser();
+                        Navigator.pushNamed(context, ChatPage.id);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'user-not-found') {
                           showSnackBar(context, 'user not found');

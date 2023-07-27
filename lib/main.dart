@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mahadta_firbase/pages/chat_page.dart';
 import 'package:mahadta_firbase/pages/logain_page.dart';
 import 'package:mahadta_firbase/pages/register_page.dart';
 
@@ -19,8 +20,9 @@ class ScollerCaht extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        'LoginPage': (context) => LoginPage(),
+        LoginPage.id: (context) => LoginPage(),
         RegisterPage.id: (context) => RegisterPage(),
+        ChatPage.id: (context) => ChatPage(),
       },
       initialRoute: 'LoginPage',
     );
