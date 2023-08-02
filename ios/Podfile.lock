@@ -41,12 +41,15 @@ PODS:
   - GoogleUtilities/Reachability (7.11.4):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (3.1.1)
+  - modal_progress_hud_nsn (0.4.0):
+    - Flutter
   - PromisesObjC (2.3.1)
 
 DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - modal_progress_hud_nsn (from `.symlinks/plugins/modal_progress_hud_nsn/ios`)
 
 SPEC REPOS:
   trunk:
@@ -66,6 +69,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  modal_progress_hud_nsn:
+    :path: ".symlinks/plugins/modal_progress_hud_nsn/ios"
 
 SPEC CHECKSUMS:
   Firebase: 07150e75d142fb9399f6777fa56a187b17f833a0
@@ -78,6 +83,7 @@ SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   GoogleUtilities: c63691989bf362ba0505507da00eeb326192e83e
   GTMSessionFetcher: e8647203b65cee28c5f73d0f473d096653945e72
+  modal_progress_hud_nsn: b66f99f02da7de83484e50dfe1fe2d71ac406e67
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
 
 PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189

@@ -19,7 +19,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isLoading = false;
-
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? email, password;
@@ -35,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             key: formKey,
             child: ListView(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 75,
                 ),
                 Image.asset(
@@ -98,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await loginUser();
-                        Navigator.pushNamed(context, 'ChatPage',
+                        Navigator.pushNamed(context, ChatPage.id,
                             arguments: email);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'user-not-found') {

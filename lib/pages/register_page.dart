@@ -101,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       try {
                         await registerUser();
 
-                        Navigator.pushNamed(context, 'ChatPage');
+                        Navigator.pushNamed(context, ChatPage.id);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'weak-password') {
                           showSnackBar(context, 'weak password');
@@ -118,13 +118,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                   text: 'REGISTER',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'already have an account?',
                       style: TextStyle(
                         color: Colors.white,
@@ -134,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Text(
+                      child: const Text(
                         '  Login',
                         style: TextStyle(
                           color: Color(0xffC7EDE6),
