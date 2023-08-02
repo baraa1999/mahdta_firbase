@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mahadta_firbase/constants.dart';
 
+import '../widget/chat_buble.dart';
+
 class ChatPage extends StatelessWidget {
   static String id = 'Chatpage';
 
@@ -23,6 +25,7 @@ class ChatPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      body: const ChatBubule(),
     );
   }
 }
